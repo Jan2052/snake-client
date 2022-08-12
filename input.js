@@ -18,4 +18,4 @@ const handleUserInput = function () {
   })
 };
 
-module.exports = {setupInput, handleUserInput};
+module.exports = {setupInput};
