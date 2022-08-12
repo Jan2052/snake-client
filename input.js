@@ -20,6 +20,7 @@ const handleUserInput = function () {
       }
       if (key === 'w') {
         conn.write("Move: up")
+        conn.write("Say: Going up")
       }
       if (key === 'a') {
         conn.write("Move: left")
@@ -29,7 +30,11 @@ const handleUserInput = function () {
       }
       if (key === 'd') {
         conn.write("Move: right")
+        conn.write("Say: Right away!")
       }
+      // setInterval(() => {
+      //   conn.write("Say: Gobble gobble")
+      // }, 5000);
     })
 
 };

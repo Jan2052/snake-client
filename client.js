@@ -13,11 +13,12 @@ const connect = function () {
 
   conn.on("connect", () => {
     conn.write("Name: JAN")
+    conn.write("Say: Hello!")
     console.log("Successfully connected to game server")
     setInterval(() => {
-      // conn.write("Move: up")
+      
       // conn.write("Move: left")
-    }, );
+    }, 1000);
   });
 
   return conn;
