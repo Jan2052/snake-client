@@ -1,4 +1,8 @@
-const setupInput = function () {
+// const { connect } = require("./client");
+// Stores the active TCP connection object.
+let connection;
+const setupInput = (conn) => {
+  connection = conn;
   const stdin = process.stdin;
   stdin.setRawMode(true);
   stdin.setEncoding("utf8");
@@ -8,14 +12,26 @@ const setupInput = function () {
 };
 
 const handleUserInput = function () {
-  setTimeout(() => {
+
     //\u0003 sets up ctrl c to exit?
-    process.stdin.on('data', (key) =>{
+    process.stdin.on('data', (key) => {
       if (key === '\u0003') {
         process.exit();
       }
+      if (key === 'w') {
+        conn.write("Move: up")
+      }
+      if (key === 'a') {
+        conn.write("Move: left")
+      }
+      if (key === 's') {
+        conn.write("Move: down")
+      }
+      if (key === 'd') {
+        conn.write("Move: right")
+      }
     })
-  })
+
 };
 
-module.exports = {setupInput};
+module.exports = { setupInput };
