@@ -15,7 +15,6 @@ const handleUserInput = function (key) {
   }
   if (key === 'w') {
     conn.write("Move: up")
-    conn.write("Say: Going up")
   }
   if (key === 'a') {
     conn.write("Move: left")
@@ -25,7 +24,6 @@ const handleUserInput = function (key) {
   }
   if (key === 'd') {
     conn.write("Move: right")
-    conn.write("Say: Right away!")
   }
   if (key === 'e') {
     conn.write("Say: Coming through!")
